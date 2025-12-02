@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>semáforo web</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div id="overlay">
+        <div class="spinner">
+
+        </div>
+    </div>
+    <div id="mqtt-status" class="status-reconectando">MQTT: Reconectando</div>
+    <div class="container">
+        <div class="semaforo">
+            <div class="led" id="vermelho"></div>
+            <div class="led" id="amarelo"></div>
+            <div class="led" id="verde"></div>
+        </div>
+    </div>
+
+     <div class="controles">
+                <button class="action-btn btvermelho" onclick="EnviaContole('vermelho')">Vermelho</button>
+                <button class="action-btn btamarelo" onclick="EnviaContole('amarelo')">amarelo</button>
+                <button class="action-btn btverde" onclick="EnviaContole('verde')">verde</button>
+                <button class="action-btn automatico" onclick="EnviaContole('automatico')">auto</button>
+                <button class="action-btn desligado" onclick="desligar('desligar')">desligar</button>
+                <button class="action-btn intermitente" onclick="EnviarControle('intermitente')">intermitente</button>
+            </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
